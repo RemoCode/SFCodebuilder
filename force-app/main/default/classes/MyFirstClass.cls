@@ -4,4 +4,8 @@ public class MyFirstClass {
         System.debug(accounts);
 
     }
+
+    public void mySecondMehtod() {
+        // method 2
+    }
 }
