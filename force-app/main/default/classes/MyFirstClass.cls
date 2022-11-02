@@ -7,4 +7,8 @@ public class MyFirstClass {
     public void secondMethod() {
         // method
     }
+
+    public void mySecondMehtod() {
+        // method 2
+    }
 }
