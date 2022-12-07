@@ -4,7 +4,7 @@ public class ContactTriggerHandler {
 
         for(Contact con : contacts){
             if (accountsContacts.get(con.AccountId) != null) {
-                accountContacts.get(con.AccountId).add(con);
+                accountsContacts.get(con.AccountId).add(con);
             } else {
                 List<Contact> contactsToPut = new List<Contact>();
                 contactsToPut.add(con);
@@ -15,7 +15,8 @@ public class ContactTriggerHandler {
         List<Account> accountsToUpdate = new List<Account>();
 
         for (Id key : accountsContacts.keySet()){
-            List<Contact> contactstoCount = accountsContacts.get(con.AccountId);
+            List<Contact> contactstoCount = accountsContacts.get(key);
+            // add existing contacts to list contactstoCount from DB
             Integer nrOfActiveContacts = 0;
             for (Contact con : contactstoCount) {
                 if (con.Is_Active__c) {
