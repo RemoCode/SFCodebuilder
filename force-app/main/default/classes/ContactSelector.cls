@@ -13,4 +13,8 @@ public class ContactSelector {
         update contactFromDB[0];
         return contactFromDB[0].Is_Active__c;
     }
+
+    public List<Contact> activeContactsFromAccount(Set<Id> accIds, List<Id> conIds){
+        return [SELECT Id, AccountId, Is_Active__c FROM Contact WHERE AccountId IN :accIds AND Is_Active__c = true AND Id NOT IN :conIds];
+    }
 }
